@@ -1,0 +1,109 @@
+PluginInfo = {
+    Name = "",
+    Version = "",
+    Id = "",
+    Description = [[]],
+    Author = "",
+    ShowDebug = true
+}
+
+------------------------------- Global Variables ------------------------------
+
+
+--------------------------------- Properties ----------------------------------
+--This is were you define the Right Hand Properties pane information. This can be accessed later by the Properties.<"Name"> handle.
+function GetProperties()
+    props = { }
+
+    return props
+end
+
+--Modify visibility based on other properties
+--[[
+    Example: 
+    if props["propertyName"].Value == "DHCP" then
+        props["someStaticIPRelatedProperty"].IsHidden = true
+    else
+        props["someStaticIPRelatedProperty"].IsHidden = false
+]]--
+function RectifyProperties(props)
+    return props
+end
+
+------------------------------ Plugin Block Name ------------------------------
+-- This is where to set the default name of the block. This can dynamically update.
+function GetPrettyName(props)
+    return ""
+end
+
+---------------------------------- Controls -----------------------------------
+-- This is where Controls are created - access later with the Controls.<"Name"> handle.
+function GetControls(props)
+    ctls = { }
+
+    return ctls
+end
+
+------------------------------- Control Layout --------------------------------
+function GetControlLayout(props)
+    layout = { }
+
+    graphics = { }
+
+    return layout, graphics
+end
+
+---------------------------- Other Plugin Functions ---------------------------
+
+function GetPins(props)
+	local pins = { }
+  
+	return pins
+end
+--[[ Uncomment if you need multiple pages (tabs)
+function GetPages(props)
+    local pages = {}
+
+    return pages
+end
+]]
+function GetComponents(props)
+	return
+	{
+    
+	}
+end
+
+function GetWiring(props)
+	local wiring = { }
+  
+	return wiring
+end
+
+------------------------------ Local Functions --------------------------------
+
+------------------------------- Runtime Logic ---------------------------------
+--This is where you use the Controls.<"Name"> handles to make things happen.
+if Controls then
+------------------------------------ Objects ----------------------------------
+
+
+-------------------------------- Initialization -------------------------------
+-- Consider using assert(<condition>,<error if false>) to verify that controls are within bounds
+function Initialize()
+	
+end
+
+canInitialize = true
+
+--Check Properties and other stuff for illegal values
+
+if canInitialize then
+	print("Initializing")
+	Initialize()
+	print("Initialization Complete")
+else
+	print("Not initializing")
+end
+
+end	--if Controls 
